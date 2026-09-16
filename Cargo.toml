@@ -11,7 +11,10 @@ keywords = ["diesel", "r2d2", "pool", "tokio", "async"]
 [features]
 # Enables CockroachDB-specific functions.
 cockroach = []
-default = [ "cockroach" ]
+# Enables Postgres-specific connection validity checks (e.g. the
+# writer/replica liveness check via `SELECT pg_is_in_recovery()`).
+postgres = [ "diesel/postgres" ]
+default = [ "cockroach", "postgres" ]
 
 [dependencies]
 bb8 = "0.9"

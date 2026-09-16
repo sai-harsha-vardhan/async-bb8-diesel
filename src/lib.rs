@@ -16,4 +16,6 @@ pub use async_traits::{
 };
 pub use connection::Connection;
 pub use connection_manager::ConnectionManager;
+#[cfg(feature = "postgres")]
+pub use connection_manager::RecoveryCheck;
 pub use error::{ConnectionError, ConnectionResult, OptionalExtension, PoolError, PoolResult};
